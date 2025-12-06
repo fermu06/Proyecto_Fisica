@@ -1,5 +1,4 @@
-//Aquí hay que juntar ambos códigos y hacer el menú inicial
-
+#include <windows.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -56,6 +55,7 @@ void calcularTemperaturaEquilibrio();
 
 //CPODIGO PRINCIPAL
 int main() {
+    SetConsoleOutputCP(CP_UTF8);
     int opcion_principal;
     
     printf("=========================================================================\n");
@@ -119,13 +119,13 @@ void calcularModeloMatematico() {
     printf("de datos experimentales ingresados por el usuario.\n");
     printf("Permite trabajar con modelos del tema: capacidades termicas especificas,\n");
     printf("y tambien crear un modelo personalizado.\n");
-    printf("============================================================\n");
+    printf("========================================================================\n");
 
     printf("\nSeleccione el tipo de modelo que desea crear:\n");
     printf("  1) Modelo Q en funcion del incremento de temperatura (ΔT)\n");
     printf("  2) Modelo Q en funcion de la temperatura absoluta (T)\n");
     printf("  3) Modelo personalizado (variables y unidades propias)\n");
-    printf("------------------------------------------------------------\n");
+    printf("-----------------------------------------------------------------------\n");
     printf("Opcion: ");
     scanf("%i", &op);
 
@@ -136,7 +136,7 @@ void calcularModeloMatematico() {
 
     if (op == 3) {
         printf("\nVARIABLES DEL MODELO PERSONALIZADO\n");
-        printf("----------------------------------\n");
+        printf("-------------------------------------------------------------------\n");
 
         printf("Nombre de la variable dependiente (Y): ");
         scanf("%s", vy);
@@ -151,11 +151,11 @@ void calcularModeloMatematico() {
         scanf("%s", uy);
     }
 
-    printf("\n============================================================\n");
+    printf("\n====================================================================\n");
     printf("INGRESO DE DATOS EXPERIMENTALES\n");
-    printf("============================================================\n");
+    printf("======================================================================\n");
 
-    printf("¿Cuantos puntos desea ingresar? (minimo 2, máximo 20): ");
+    printf("Cuantos puntos desea ingresar? (minimo 2, maximo 20): ");
     scanf("%i", &p.n);
 
     for (int i = 0; i < p.n; i++) {
@@ -166,9 +166,9 @@ void calcularModeloMatematico() {
     m = pendiente(&p, p.n);
     b = ordenada(&p, p.n);
 
-    printf("\n============================================================\n");
+    printf("\n====================================================================\n");
     printf("                   RESULTADO DEL MODELO\n");
-    printf("============================================================\n");
+    printf("======================================================================\n");
 
     switch (op)
     {
@@ -193,19 +193,19 @@ void calcularModeloMatematico() {
         break;
     }
 
-    printf("============================================================\n");
+    printf("========================================================================\n");
     printf("Calculo completado correctamente.\n");
-    printf("============================================================\n");
+    printf("========================================================================\n");
     
     // Menú después del cálculo
     int opcion_despues;
     while(1) {
-        printf("\n¿QUE DESEA HACER AHORA?\n");
-        printf("============================================================\n");
+        printf("\nQUE DESEA HACER AHORA?\n");
+        printf("===================================================\n");
         printf("1) Calcular otro Modelo Matematico\n");
         printf("2) Calcular Temperatura de Equilibrio\n");
         printf("3) Salir al Menu Principal\n");
-        printf("============================================================\n");
+        printf("===================================================\n");
         printf("Seleccione una opcion: ");
         scanf("%d", &opcion_despues);
         
@@ -235,13 +235,13 @@ void calcularTemperaturaEquilibrio() {
     int op1, op2, misma_sustancia;
     double temp1, temp2, volumen1, volumen2, masa1, masa2;
     
-    printf("=====================================================\n");
+    printf("========================================================================\n");
     printf("        CALCULADORA DE TEMPERATURA DE EQUILIBRIO\n");
-    printf("=====================================================\n");
+    printf("========================================================================\n");
     printf("\nDESCRIPCION:\n");
-    printf("Este programa calcula la temperatura de equilibrio termico\n");
-    printf("resultante de mezclar dos sustancias liquidas.\n");
-    printf("=====================================================\n");
+    printf("Este programa calcula la temperatura de equilibrio termico resultante\n");
+    printf("de mezclar dos sustancias liquidas.\n");
+    printf("========================================================================\n");
     printf("\nEl calculo se basa en el principio de conservacion de energia:\n");
     printf("Q_perdido = Q_ganado  ->  m1*c1*(Teq-T1) = m2*c2*(T2-Teq)\n");
 
@@ -255,7 +255,7 @@ void calcularTemperaturaEquilibrio() {
     op1 = leerEntero("Seleccione sustancia (1-10): ", 1, 10);
     volumen1 = leerDecimal("Volumen [L] (1 entero y 1 decimal): ");
     temp1 = leerDecimal("Temperatura inicial [*C]: ");
-    
+
     // Calcular masa 1 (volumen L * densidad kg/L)
     masa1 = volumen1 * (sustancias[op1-1].densidad_kgL);
     
@@ -311,19 +311,16 @@ void calcularTemperaturaEquilibrio() {
     printf("TEMPERATURA DE EQUILIBRIO TERMICO: %.2f [*C]\n", teq);
     printf("=========================================================================\n");
     
-    //printf("\nPresione Enter para continuar...");
-    //getchar();
-    //getchar(); // Esperar Enter
-        
+    
     // Menú después del cálculo
     int opcion_despues;
     while(1) {
-        printf("\n¿QUE DESEA HACER AHORA?\n");
-        printf("============================================================\n");
+        printf("\nQUE DESEA HACER AHORA?\n");
+        printf("===================================================\n");
         printf("1) Calcular otro Modelo Matematico\n");
         printf("2) Calcular otra Temperatura de Equilibrio\n");
         printf("3) Salir al Menu Principal\n");
-        printf("============================================================\n");
+        printf("===================================================\n");
         printf("Seleccione una opcion: ");
         scanf("%d", &opcion_despues);
         
@@ -389,7 +386,7 @@ void mostrarSustancias() {
                sustancias[i].densidad_kgm3,
                sustancias[i].densidad_kgL);
     }
-    printf("================================\n");
+    printf("===================================================\n");
 }
 
 // Función para validar entrada de números
