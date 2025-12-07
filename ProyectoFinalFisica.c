@@ -70,7 +70,7 @@ int main() {
     printf("\nTambien este programa calcula la temperatura de equilibrio termico\n");
     printf("resultante de mezclar dos sustancias liquidas.\n");
     printf("\nEl calculo se basa en el principio de conservacion de energia:\n");
-    printf("Q_perdido = Q_ganado  ->  m1*c1*(Teq-T1) = m2*c2*(T2-Teq)\n");
+    printf("Q_perdido + Q_ganado = 0  ->  m1*c1*(Teq-Ti1) + m2*c2*(Teq-Ti2) = 0\n");
     printf(" \n");
     printf("========================================================================\n");
     
@@ -243,7 +243,7 @@ void calcularTemperaturaEquilibrio() {
     printf("de mezclar dos sustancias liquidas.\n");
     printf("========================================================================\n");
     printf("\nEl calculo se basa en el principio de conservacion de energia:\n");
-    printf("Q_perdido + Q_ganado = 0  ->  m1*c1*(Teq-T1) + m2*c2*(T2-Teq) = 0\n");
+    printf("Q_perdido + Q_ganado = 0  ->  m1*c1*(Teq-Ti1) + m2*c2*(Teq-Ti2) = 0\n");
 
     mostrarSustancias();
     
