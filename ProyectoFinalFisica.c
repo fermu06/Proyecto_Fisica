@@ -243,7 +243,7 @@ void calcularTemperaturaEquilibrio() {
     printf("de mezclar dos sustancias liquidas.\n");
     printf("========================================================================\n");
     printf("\nEl calculo se basa en el principio de conservacion de energia:\n");
-    printf("Q_perdido = Q_ganado  ->  m1*c1*(Teq-T1) = m2*c2*(T2-Teq)\n");
+    printf("Q_perdido + Q_ganado = 0  ->  m1*c1*(Teq-T1) + m2*c2*(T2-Teq) = 0\n");
 
     mostrarSustancias();
     
@@ -303,8 +303,7 @@ void calcularTemperaturaEquilibrio() {
     printf("Volumen [L]          %9.3f             %9.3f\n", volumen1, volumen2);
     printf("Masa [kg]            %9.3f             %9.3f\n", masa1, masa2);
     printf("Temp. inicial [*C]   %9.1f             %9.1f\n", temp1, temp2);
-    printf("Cap. termica [J/kg*C] %9.0f             %9.0f\n",
-           s1.capacidad_termica, s2.capacidad_termica);
+    printf("Cap. termica [J/kg*C] %9.0f             %9.0f\n", s1.capacidad_termica, s2.capacidad_termica);
     printf("Densidad [kg/m^3]    %9.0f             %9.0f\n", 
            s1.densidad_kgm3, s2.densidad_kgm3);
     printf("-------------------------------------------------------------------------\n");
@@ -422,8 +421,7 @@ double leerDecimal(char* mensaje) {
 }
 
 //Calcula la temperatura de equilibrio para sustancias diferentes
-double calcularTeqDiferentes(double m1, double cp1, double t1, 
-                            double m2, double cp2, double t2) {
+double calcularTeqDiferentes(double m1, double cp1, double t1, double m2, double cp2, double t2) {
     double numerador = (m1 * cp1 * t1) + (m2 * cp2 * t2);
     double denominador = (m1 * cp1) + (m2 * cp2);
     
