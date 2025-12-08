@@ -71,6 +71,11 @@ int main() {
     printf("resultante de mezclar dos sustancias liquidas.\n");
     printf("\nEl calculo se basa en el principio de conservacion de energia:\n");
     printf("Q_perdido + Q_ganado = 0  ->  m1*c1*(Teq-Ti1) + m2*c2*(Teq-Ti2) = 0\n");
+    printf("========================================================================\n");
+    printf("\nAl tratarse de liquidos, el usuario ingresara el volumen en [L] de cada\n");
+    printf("sustancia y el programa calculara su masa con la formula: m = p * V\n");
+    printf("Para simplificar los calculos se usara la densidad en [kg/L], asi al \n");
+    printf("realizar la multiplicacion obtendremos la masa en [kg].\n");
     printf(" \n");
     printf("========================================================================\n");
     
@@ -179,7 +184,7 @@ void calcularModeloMatematico() {
 
     case 2:
         printf("MODELO 2: Q vs T\n");
-        printf("Qsum [J] = %.4f [J/C*] * T[C*]   %+ .4f [J]\n", m, b);
+        printf("Qsum [J] = %.4f [J/K] * T[K]   %+ .4f [J]\n", m, b);
         break;
 
     case 3:
@@ -246,7 +251,7 @@ void calcularTemperaturaEquilibrio() {
     printf("Q_perdido + Q_ganado = 0  ->  m1*c1*(Teq-Ti1) + m2*c2*(Teq-Ti2) = 0\n");
     printf("========================================================================\n");
     printf("\nAl tratarse de liquidos, el usuario ingresara el volumen en [L] de cada\n");
-    printf("sustancia y el programa calculara su masa con la formula: m = ρ * V\n");
+    printf("sustancia y el programa calculara su masa con la formula: m = p * V\n");
     printf("Para simplificar los calculos se usara la densidad en [kg/L], asi al \n");
     printf("realizar la multiplicacion obtendremos la masa en [kg].\n");
 
