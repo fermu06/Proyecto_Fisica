@@ -179,7 +179,7 @@ void calcularModeloMatematico() {
 
     case 2:
         printf("MODELO 2: Q vs T\n");
-        printf("Qsum [J] = %.4f [J/K] * T[K]   %+ .4f [J]\n", m, b);
+        printf("Qsum [J] = %.4f [J/C*] * T[C*]   %+ .4f [J]\n", m, b);
         break;
 
     case 3:
