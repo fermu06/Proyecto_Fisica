@@ -1,4 +1,4 @@
-# **Calculadora de Modelos Matemáticos y Temperatura de Equilibrio**
+# **Equipo Sigma: Calculadora de Modelos Matemáticos y Temperatura de Equilibrio**
 
 Este repositorio contiene el programa **ProyectoFinalFisica**, una herramienta desarrollada en lenguaje C para calcular:
 
