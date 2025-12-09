@@ -53,7 +53,7 @@ void calcularTemperaturaEquilibrio();
 
 
 
-//CPODIGO PRINCIPAL
+//CODIGO PRINCIPAL
 int main() {
     SetConsoleOutputCP(CP_UTF8);
     int opcion_principal;
